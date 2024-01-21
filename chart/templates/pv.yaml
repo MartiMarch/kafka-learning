@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: kafka-pv
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  claimRef:
+    name: data-kafka-0
+    namespace: {{ .Values.persistence.namespace }}
+  hostPath:
+    path: {{ .Values.persistence.kafka.hostPath }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: zookeeper-pv
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  claimRef:
+    name: data-kafka-zookeeper-0
+    namespace: {{ .Values.persistence.namespace }}
+  hostPath:
+    path: {{ .Values.persistence.zookepeer.hostPath }}

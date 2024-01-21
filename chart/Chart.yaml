@@ -1,0 +1,15 @@
+apiVersion: v2
+name: KafkaTrining
+version: 0.0.0
+description: Kafka Chart used to train
+keywords:
+  - Training
+  - Kafka
+dependencies:
+  - name: kafka
+    version: 21.4.4
+    repository: https://charts.bitnami.com/bitnami
+maintainers:
+  - name: Marti March Llopis
+    email: mmll1199@protonmail.com
+    url: https://github.com/MartiMarch
