@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "925e9537-9e5c-4610-990a-d7191982e042",
+		"name": "kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30103147",
+		"_collection_link": "https://galactic-trinity-716652.postman.co/workspace/New-Team-Workspace~173acb07-c195-4691-8509-96a0ba226b49/collection/30103147-925e9537-9e5c-4610-990a-d7191982e042?action=share&source=collection_link&creator=30103147"
+	},
+	"item": [
+		{
+			"name": "producer",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9991/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9991",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9991/healthcheck",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9991",
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/send/{topic}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"test\":\"mensaje publicado\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9991/send/producer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9991",
+							"path": [
+								"send",
+								"producer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "consumer",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9992/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9992",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9992/healthcheck",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9992",
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/consume/{topic}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9992/consume/producer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9992",
+							"path": [
+								"consume",
+								"producer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
